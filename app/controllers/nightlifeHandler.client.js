@@ -15,6 +15,19 @@
         }
     });
     
+    if (document.cookie) {
+        var arr = [];
+        arr = document.cookie.split("=");
+        if (arr[0] === "last-search") {
+          input.value = arr[1];
+          
+          if (arr[1]) {
+              searchBtn.click();
+          }
+        }
+    }
+    
+    
     function getAddress(arr) {
         var text = "";
         
@@ -70,8 +83,9 @@
     }
     function search() {
         var searchTerm = input.value;
-        
+        //document.cookie = "last-search=" + searchTerm;
         ajaxFunctions.ajaxRequest("GET", null, apiURL + searchTerm, loadData);
+        //document.cookie="";
         
         
     }

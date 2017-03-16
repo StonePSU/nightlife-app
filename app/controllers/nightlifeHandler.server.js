@@ -13,6 +13,11 @@ function nightlifeHandler() {
     });
     
     this.searchLocation = function(req, res) {
+        if (!req.isAuthenticated()) {
+            res.cookie("last-search", req.params.location);
+        } else {
+            res.clearCookie("last-search");
+        }
         if (req.params.location) {
             console.log(req.params.location);
             yelp.search({
@@ -45,8 +50,8 @@ function nightlifeHandler() {
     
     this.addOrRemoveAttendee = function(req, res) {
         var id = req.params.id;
-        
         if (req.isAuthenticated()) {
+            res.clearCookie("last-search");
             Businesses.findOne({business_id: id}, "business_id participants", function(err, business) {
               var isGoing = false;
               var deleted = 0;
@@ -101,7 +106,6 @@ function nightlifeHandler() {
             });
           //res.json({message: "Success"});
         } else {
-            res.cookie("last-search", id);
             res.json({ loginStatus: "GUEST"});
         }
     }
