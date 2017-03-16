@@ -9,6 +9,7 @@ var session = require('express-session');
 require('./app/config/passport.js')(passport);
 var morgan = require('morgan');
 var mongoose = require('mongoose');
+var cookieMW = require('./app/controllers/cookieMiddleware.js');
 
 mongoose.connect(process.env.MONGO_URI);
 
@@ -21,6 +22,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use("/common", express.static(process.cwd() + "/app/common/"));
 app.use("/controllers", express.static(process.cwd() + "/app/controllers/"));
+app.use("/api", cookieMW);
 app.use(morgan('tiny'));
 app.set('view engine', 'pug');
 
