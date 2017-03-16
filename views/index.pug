@@ -1,0 +1,16 @@
+doctype html
+html(lang='en-US')
+    include head.pug
+    body
+        div.container-fluid
+            h1 After Dark
+            div.container
+                p What's everyone up to tonight? Search your location to find local hotspots and see how many people are going.  And then let everyone know where you're headed!
+                div#search
+                    input(type='text' placeholder='Enter your location' name='search' id='search-input' autofocus)
+                    button(type='button' id='search-btn') 
+                        i(class='fa fa-search' aria-hidden='true')
+                div#results
+    script(type='text/javascript' src='/common/events.js')            
+    script(type='text/javascript' src='/common/ajax-functions.js')
+    script(type='text/javascript' src='/controllers/nightlifeHandler.client.js')

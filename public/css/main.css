@@ -1,0 +1,108 @@
+body {
+    background-attachment: fixed;
+    background-image: url(../img/lights-nightlife-bg.jpg);
+    font-family: Raleway;
+    font-size: 16px;
+}
+
+h1 {
+    color: #fff;
+    font-family: 'Fontdiner Swanky', cursive;
+    font-size: 5em;
+    font-weight: bold;
+    padding-bottom: .8em;
+    padding-top: .8em;
+    text-align: center;
+}
+
+.business {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 100%;
+  margin: 20px 0px;
+  padding: 10px;
+}
+
+.business-details {;
+  position: relative;
+}
+
+.business-details > p {
+  margin: 0px;
+}
+
+.business-img {
+  float: left;
+  margin-right: 20px;
+}
+
+.business-details h2 {
+  font-size: 1.2em;
+  margin: 0px;
+}
+
+.clear {
+  clear: both;
+}
+
+.social {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.social button {
+  background-color: #4682B4;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: .75em;
+}
+
+#search {
+    font-size: 1.875em;
+    margin: 0em auto 2em auto;
+    position: relative;
+    text-align: center;
+}
+
+#search input {
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    height: 1.5em;
+    margin: auto;
+    width: 60%;
+    padding: .5em .5em;
+}
+
+#search input:focus {
+    outline: none;
+}
+
+#search-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    height: 1.5em;
+    position: absolute;
+    bottom: 0px;
+}
+
+.business-id {
+  display: none;
+}
+
+.container > p {
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .social {
+        position: relative;
+    }
+    
+}
